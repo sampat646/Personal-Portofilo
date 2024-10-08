@@ -16,7 +16,7 @@ a {
     font-family: "Lato", sans-serif;
     font-weight: 100;
     font-style: normal;
-    font-weight: 300;
+    font-weight: 200;
 }
 
 a::after {
@@ -66,6 +66,9 @@ a:hover::after {
 .fam{
     color: #E1E1D9;
     font-size: medium;
+    font-family: "Lato", sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 span{
     font-weight:bolder;
