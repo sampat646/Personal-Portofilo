@@ -10,6 +10,11 @@
   <body>
     <header>
       <nav class="Navbar">
+        <div class="nav-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
         <ul class="Nav-ul">
           <li><a href="#Home">Home</a></li>
           <li><a href="#about">About Me</a></li>
@@ -18,9 +23,9 @@
         </ul>
       </nav>
     </header>
-
+    
     <main>
-      <section>
+      <section id="Home" class="page">
         <div id="page1">
           <h1 class="hey">
             <span class="key">HEY</span>
@@ -34,33 +39,71 @@
                 class="key"
                 src="https://fonts.gstatic.com/s/e/notoemoji/latest/1f601/512.gif"
                 alt="😁"
-                width="62vw"
-                height="62vh"
+                width="62"
+                height="62"
               />
             </picture>
-            
-            <span class="key">I</span>
-            <span class="key">'</span>
-            <span class="key">m</span>
-            <span class="key">S</span>
-            <span class="key">a</span>
-            <span class="key">m</span>
-            <span class="key">p</span>
-            <span class="key">a</span>
-            <span class="key">t</span>
+            <span class="key">I'm sampat</span>
           </h1>
           <p class="fam">
             Familiar with frontend skills like HTML, CSS, and JS (Basics)
           </p>
         </div>
       </section>
+
+      <section id="about" class="page">
+        <h2>About Me</h2>
+        <p>This is the about me section. Add your content here.</p>
+      </section>
+
+      <section id="projects" class="page">
+        <h2>Projects</h2>
+        <p>This is the projects section. Add your content here.</p>
+      </section>
     </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const navToggle = document.querySelector('.nav-toggle');
+        const navUl = document.querySelector('.Nav-ul');
+      
+        navToggle.addEventListener('click', function() {
+          navUl.classList.toggle('active');
+        });
+      
+        // Close menu when a link is clicked
+        document.querySelectorAll('.Nav-ul a').forEach(link => {
+          link.addEventListener('click', function() {
+            navUl.classList.remove('active');
+          });
+        });
+      
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+      
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+              behavior: 'smooth'
+            });
+          });
+        });
+      });
+      </script>
+
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
       integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="app.js"></script>
   </body>
 </html>
+    
+    
